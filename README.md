@@ -1,4 +1,4 @@
-# SlimDash
+# SlimDish
 
 A reusable small-dashboard starter built as a Python/FastAPI modular monolith with a
 React + Carbon frontend. The production artifact is one non-root container; SQLite data
