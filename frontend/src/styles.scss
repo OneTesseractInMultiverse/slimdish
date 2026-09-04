@@ -1,0 +1,17 @@
+@use '@carbon/react/scss/spacing' as *;
+@use '@carbon/react/scss/type' as *;
+
+body { margin: 0; background: #f4f4f4; }
+.dashboard { padding-top: calc(3rem + #{$spacing-09}); min-height: 100vh; }
+.dashboard__eyebrow { @include type-style('label-01'); color: #525252; margin-bottom: $spacing-03; }
+.dashboard h1 { @include type-style('productive-heading-06'); margin: 0 0 $spacing-05; }
+.dashboard__intro { @include type-style('body-long-02'); margin-bottom: $spacing-09; color: #525252; }
+.widget-card { min-height: 14rem; margin-bottom: $spacing-07; display: flex; flex-direction: column; }
+.widget-card__label { @include type-style('heading-compact-01'); color: #525252; }
+.widget-card__value { @include type-style('productive-heading-07'); margin: auto 0 $spacing-05; }
+.widget-card__detail { @include type-style('body-compact-01'); color: #525252; }
+.dashboard__signin { margin-top: $spacing-06; }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}

@@ -1,0 +1,1 @@
+"""Web inbound adapter."""

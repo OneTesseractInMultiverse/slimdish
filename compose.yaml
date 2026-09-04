@@ -1,0 +1,31 @@
+services:
+  dashboard:
+    build: .
+    image: slimdash:local
+    init: true
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp:size=32m,noexec,nosuid,nodev
+    ports:
+      - "8000:8000"
+    environment:
+      APP_ENV: ${APP_ENV:-development}
+      APP_DATABASE_PATH: /data/slimdash.db
+      APP_SESSION_SECRET: ${APP_SESSION_SECRET:-development-only-change-this-secret}
+      APP_PUBLIC_URL: ${APP_PUBLIC_URL:-http://localhost:8000}
+      APP_ALLOWED_HOSTS: ${APP_ALLOWED_HOSTS:-localhost,127.0.0.1}
+      APP_SECURE_COOKIES: ${APP_SECURE_COOKIES:-false}
+      W3ID_CLIENT_ID: ${W3ID_CLIENT_ID:-}
+      W3ID_CLIENT_SECRET: ${W3ID_CLIENT_SECRET:-}
+      W3ID_DISCOVERY_URL: ${W3ID_DISCOVERY_URL:-}
+    volumes:
+      - slimdash-data:/data
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+
+volumes:
+  slimdash-data:
+
