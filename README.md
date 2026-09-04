@@ -27,7 +27,7 @@ docker compose up --build
 
 Open `http://localhost:8000`. The named `slimdash-data` volume survives container replacement.
 
-## W3ID OpenID Connect
+## OpenID Connect
 
 Register the exact callback URI `<APP_PUBLIC_URL>/auth/callback` with the W3ID provider, then
 set `W3ID_CLIENT_ID`, `W3ID_CLIENT_SECRET`, and `W3ID_DISCOVERY_URL`. Authentication is disabled
